@@ -1,0 +1,661 @@
+/*импорт переменных из файла _vars.scss */
+@import 'vars';
+
+/* обнуление стилей и наследование*/
+* {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-family: inherit;
+}
+
+/* убрать нижнее подчеркивание для всех ссылок */
+a {
+  text-decoration: none;
+}
+
+/* подключение внешнего шрифта Google */
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Центрирование из расчета контент дисплея = 1200px */
+.center {
+  padding-left: calc(50% - 1200px/2);
+  padding-right: calc(50% - 1200px/2);
+}
+
+.header {
+  height: 77px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid rgba(255, 255, 255, 0.8);
+
+  &__top {
+    height: 735px;
+    background-image: url(./img/Fon_main.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__catalog__top {
+    height: 400px;
+    background-image: url(./img/Fon_catalog.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+/* стилизация поля поиска */
+.header__input {
+  width: 288px;
+  height: 41px;
+  border: 1px solid $color-white;
+  border-radius: 20px;
+  background-color: transparent;
+  outline: none;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-white;
+  padding-left: 32px;
+  padding-right: 32px;
+  box-sizing: border-box;
+  transition: 0.3s;
+
+  // масштабирование поля поиска
+  &:hover {
+    transform: scale(1.1); //масштабироваться на +10%
+  }
+}
+
+/* сделать поиск белым */
+.header__input::placeholder {
+  color: $color-white;
+}
+
+/* Подсвечивание поля "Поиск, подписаться" */
+.header__input:focus {
+  border: 1px solid $color-light-blue;
+}
+
+.logo__img {
+  transition: 0.3s;
+
+  // масштабирование лого
+  &:hover {
+    transform: scale(1.1); //масштабироваться на +10%
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 32px;
+
+  &__link {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-white;
+    transition: 0.3s;
+
+    &:hover {
+      transform: scale(1.2);
+      text-decoration: underline;
+    }
+  }
+}
+
+.menu__mob {
+  display: none;
+}
+
+/* оформление внутри списка select */
+.select {
+  position: relative;
+  width: 288px;
+}
+
+.select select {
+  display: block;
+  width: 100%;
+  height: 41px;
+  border: 1px solid $color-grey2;
+  border-radius: 20px;
+  background: transparent;
+  padding-left: 14px;
+  padding-right: 22px;
+  appearance: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-black;
+}
+
+.select:after {
+  content: "";
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  z-index: 1;
+  margin-top: -3px;
+  background-image: url(./img/Arrow.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 17px;
+  height: 11px;
+}
+
+/* Отступы Хлебных крошек */
+.nav {
+  margin-top: 64px;
+  margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+
+
+/* Хлебные крошки */
+.breadcrumbs {
+  list-style-type: none;
+  display: flex;
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    color: $color-black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__link:not(:last-child)::after {
+    content: '/';
+    color: $color-black;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
+/* стиль заголовка h1 (Всё, чего...) + отступы сверху/снизу*/
+.main__title {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 70px;
+  max-width: 786px;
+  margin-top: 64px;
+  margin-bottom: 16px;
+  color: $color-white;
+}
+
+/* стиль заголовка h1 (Каталог) + отступы сверху/снизу*/
+.catalog__title {
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 70px;
+  max-width: 786px;
+  margin-top: 126px;
+  margin-bottom: 126px;
+  color: $color-white;
+}
+
+/* Параграф Р (Наша мебель...) + нижний отступ*/
+.top__text {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 32px;
+  margin-bottom: 16px;
+  margin-top: 16px;
+  color: $color-white;
+}
+
+/* Стиль для ссылки (каталог) */
+.top__link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: $color-white;
+
+  &:hover {
+    text-decoration: none;
+    // color: $color-white;
+  }
+}
+
+/* Заголовок Н2 (специальные...) + нижний отступ*/
+.heading {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 59px;
+  color: $color-black;
+  margin-top: 64px;
+  margin-bottom: 32px;
+  max-width: 729px;
+}
+
+/* Заголовок Н3 (Кресло...) + нижний отступ*/
+.product__heading {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: $color-black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Параграф Р (мягкое...) в другой секции + нижний отступ*/
+.product__text {
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-grey;
+  margin-bottom: 12px;
+}
+
+/* Цена Р (низкая) */
+.product__sale {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: $color-black;
+}
+
+/* Цена Р (высокая) */
+.product__price {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-decoration-line: line-through;
+  color: $color-grey;
+}
+
+/* Перейти в каталог, показать еще */
+.link__box {
+  margin-top: 39px;
+  margin-bottom: 64px;
+}
+
+/* ссылка внизу и подчеркнутая */
+.go__link {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: $color-black;
+  margin-top: 39px;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+/* Заголовок Н4 (меню...) + нижний отступ*/
+.footer__heading {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  color: $color-black;
+  margin-bottom: 12px;
+}
+
+/* Ссылки в "подвале" */
+.footer__link {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-grey;
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-black;
+  }
+}
+
+/* ссылки тел и контакты */
+.footer__link__contact {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: $color-grey;
+
+  &:hover {
+    text-decoration: underline;
+    color: $color-black;
+  }
+}
+
+/* Параграф Р (получайте...) в "подвале" + нижний отступ*/
+.form__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 16px;
+  color: $color-black;
+  margin-top: 17px;
+  margin-bottom: 16px;
+}
+
+/* Поле ввода адреса */
+.form__email {
+  background-color: transparent;
+  border: 1px solid $color-grey2;
+  border-radius: 20px;
+  box-sizing: border-box;
+  width: 275px;
+  height: 46px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 18px;
+  color: $color-grey2;
+  outline: none;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+/* подсвечивание поля ввода email */
+.form__email:focus {
+  border: 1px solid $color-light-blue;
+}
+
+/* стилизация текста внутри placeholder */
+.form__email::placeholder {
+  color: $color-grey2;
+}
+
+/* Кнопка Подписаться */
+.form__button {
+  background: rgba(222, 215, 215, 0.41);
+  border: 1px solid $color-white;
+  box-sizing: border-box;
+  border-radius: 20px;
+  width: 275px;
+  height: 46px;
+  font-size: 14px;
+  line-height: 18px;
+  color: $color-black;
+  text-align: center;
+  transition: all 0.5s; //поменять параметр в течении
+
+  // закраска кнопки в черный цвет при наведении
+  &:hover {
+    background-color: $color-black; //закрасить кнопку черным
+    color: $color-white; //текст сделать белым
+  }
+}
+
+/* Картинка "Интерьер" внизу */
+.footer__logo__link {
+  align-self: flex-start;
+}
+
+/* карточка с одним продуктом */
+.product {
+  width: 378px;
+  display: flex;
+  flex-direction: column;
+
+  &__image {
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+
+    //увеличение карточки товара
+    &:hover {
+      transform: scale(1.07); //масштабироваться на +7%
+      box-shadow: 0 0 10px $color-black; //тень под картинкой, 10-размытие, черный
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    row-gap: 56px;
+    column-gap: 32px;
+    row-gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  &__box__price {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+/* карточка всего подвала сайта */
+.footer {
+  display: flex;
+  background: $color-white2;
+  padding-top: 32px;
+  padding-bottom: 40px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  &__content {
+    width: 790px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  &__info {
+    display: flex;
+    gap: 130px;
+  }
+
+  &__icons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 22px;
+  }
+}
+
+/* вся область подписаться на новости */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+// окрасить и увеличить кнопку при наведении
+.instagram__logo {
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.4);
+  }
+
+  &:hover path {
+    fill: rgb(225, 48, 108);
+  }
+
+  //плавно залить цветом
+  & path {
+    transition: all 1s;
+  }
+}
+
+.twitter__logo {
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.4);
+  }
+
+  &:hover path {
+    fill: rgb(29, 155, 240);
+  }
+}
+
+.facebook__logo {
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.4);
+  }
+
+  &:hover path {
+    fill: rgb(66, 103, 178);
+  }
+}
+
+/* средняя часть Мебель для ... (разбиение Grid) */
+.for__content {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 32px;
+}
+
+/* первая карточка в Grid */
+.for__item_big1 {
+  background-image: url(./img/Product_31.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: span 6;
+  height: 415px;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 10px $color-black;
+  }
+}
+
+/* вторая карточка в Grid */
+.for__item_big2 {
+  background-image: url(./img/Product_32.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: span 6;
+  height: 415px;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 10px $color-black;
+  }
+}
+
+/* третья карточка в Grid */
+.for__item3 {
+  background-image: url(./img/Product_33.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: span 4;
+  height: 415px;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 10px $color-black;
+  }
+}
+
+/* четвертая карточка в Grid */
+.for__item4 {
+  background-image: url(./img/Product_34.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: span 4;
+  height: 415px;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 10px $color-black;
+  }
+}
+
+/* пятая карточка в Grid */
+.for__item5 {
+  background-image: url(./img/Product_35.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  grid-column: span 4;
+  height: 415px;
+  font-weight: 600;
+  font-size: 34px;
+  line-height: 41px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $color-white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.07);
+    box-shadow: 0 0 10px $color-black;
+  }
+}
+
+/* сместить текст Работа не по центру */
+.rabota {
+  display: flex;
+  padding-bottom: 50px;
+}
+
+/* импорт стилей из cart.scss */
+@import 'cart';
+
+/* импорт стилей для планшетной версии */
+@import 'tablet';
+
+/* импорт стилей для мобильной версии */
+@import 'mobile';

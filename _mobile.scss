@@ -1,0 +1,141 @@
+/* Мобильная версия */
+
+@media (max-width: 767px) {
+    .center {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  
+    .header {
+      padding-top: 32px;
+      border-bottom: none;
+    }
+  
+    .header__input {
+      display: none;
+    }
+  
+    // не показывать верхнее меню
+    .menu {
+      display: none;
+    }
+  
+    // показать мобильное меню
+    .menu__mob {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+  
+    // размер лого в мобильной версии
+    .logo__img {
+      width: 99px;
+      height: 22px;
+    }
+  
+    .main__title {
+      font-size: 48px;
+      line-height: 59px;
+      text-align: center;
+    }
+  
+    .top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .top__text {
+      font-size: 16px;
+      line-height: 32px;
+      text-align: center;
+    }
+  
+    .top__link {
+      font-size: 14px;
+    }
+  
+    .heading {
+      font-size: 24px;
+      line-height: 29px;
+      margin-top: 32px;
+      margin-bottom: 32px;
+    }
+  
+    .for__content {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+  
+    .for__item_big1,
+    .for__item_big2,
+    .for__item3,
+    .for__item4,
+    .for__item5 {
+      grid-column: span 4;
+      font-size: 28px;
+      line-height: 34px;
+    }
+  
+    // высота двух верхних карточек в моб версии
+    .for__item_big1,
+    .for__item_big2 {
+      height: 244px;
+    }
+  
+    // высота трех нижних карточек в моб версии
+    .for__item3,
+    .for__item4,
+    .for__item5 {
+      height: 375px;
+    }
+  
+    .footer__content {
+      justify-content: center;
+    }
+  
+    .footer__info {
+      gap: 100px;
+    }
+  
+    .link__box {
+      margin-bottom: 32px;
+    }
+  
+    .catalog__title {
+      font-size: 48px;
+      line-height: 59px;
+      text-align: center;
+    }
+  
+    .breadcrumbs {
+      font-size: 14px;
+      line-height: 32px;
+    }
+  
+    .nav {
+      margin-top: 32px;
+      margin-bottom: 32px;
+      gap: 16px;
+    }
+  
+    .product__content {
+      row-gap: 33px;
+    }
+  
+    .product__heading {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  
+    .product__sale {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  
+    // положение надписи "работы" для моб версии
+    .rabota {
+      padding-bottom: 30px;
+    }
+  
+  }

@@ -1,0 +1,54 @@
+/* Планшетная версия */
+
+/* при ширине дисплея < 1200px центрирование будет*/
+@media (max-width: 1024px) {
+    .center {
+      padding-left: calc(50% - 786px/2);
+      padding-right: calc(50% - 786px/2);
+    }
+  
+    .for__content {
+      gap: 30px;
+    }
+  
+    // изменение высоты карточек для планшетной версии
+    .for__item_big1,
+    .for__item_big2,
+    .for__item3,
+    .for__item4,
+    .for__item5 {
+      height: 268px;
+    }
+  
+    // подвинуть надпись "Работы"
+    .rabota {
+      padding-bottom: 0px;
+    }
+  
+    .product__content {
+      column-gap: 29px;
+      row-gap: 37px;
+    }
+  
+    /* Скрыть лого */
+    .footer__logo__link {
+      display: none;
+    }
+  }
+  
+  // при ширине дисплея от 768px до 833px отступы и ширина элемента будут
+  @media (min-width: 768px) and (max-width: 833px) {
+    .center {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  
+    // изменение ширины карточки
+    .product {
+      width: 340px;
+    }
+  
+    .product__content {
+      justify-content: space-between;
+    }
+  }
